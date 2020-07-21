@@ -73,7 +73,8 @@
 		</p>
 	</footer>
 	<script src="../build/ckeditor.js"></script>
-	<script>BalloonEditor
+	<script>
+		BalloonEditor
 			.create( document.querySelector( '.editor' ), {
 				
 				toolbar: {
@@ -90,11 +91,19 @@
 						'outdent',
 						'|',
 						'blockQuote',
+						'insertTable',
 						'undo',
 						'redo'
 					]
 				},
 				language: 'en',
+				table: {
+					contentToolbar: [
+						'tableColumn',
+						'tableRow',
+						'mergeTableCells'
+					]
+				},
 				licenseKey: '',
 				
 			} )
