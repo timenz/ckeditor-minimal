@@ -13,6 +13,7 @@ import Indent from '@ckeditor/ckeditor5-indent/src/indent.js';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
 import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
+import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
@@ -31,6 +32,7 @@ Editor.builtinPlugins = [
 	Italic,
 	Link,
 	List,
+	Table,
 	Paragraph,
 	PasteFromOffice,
 	TextTransformation
