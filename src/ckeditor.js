@@ -19,8 +19,35 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
+import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
+import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
 
 class Editor extends BalloonEditor {}
+
+class Dia extends Plugin {
+	init () {
+		console.info('init')
+		const editor = this.editor
+
+		editor.ui.componentFactory.add('dia', () => {
+			const button = new ButtonView()
+			button.set({
+				label: 'Dia',
+				withText: true
+			})
+			button.on('execute', () => {
+				const fn = (text) => {
+					editor.model.change( writer => {
+						editor.model.insertContent(writer.createText(text));
+					});
+					
+				}
+				editor.config._config.onDia(fn)
+			})
+			return button
+		})
+	}
+}
 
 // Plugins to include in the build.
 Editor.builtinPlugins = [
@@ -39,7 +66,39 @@ Editor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	Dia
 ];
+
+Editor.defaultConfig = {
+	toolbar: {
+		items: [
+			'heading',
+			'|',
+			'bold',
+			'italic',
+			'link',
+			'bulletedList',
+			'numberedList',
+			'|',
+			'outdent',
+			'indent',
+			'|',
+			'blockQuote',
+			'insertTable',
+			'mediaEmbed',
+			'undo',
+			'redo'
+		]
+	},
+	language: 'en',
+	table: {
+		contentToolbar: [
+			'tableColumn',
+			'tableRow',
+			'mergeTableCells'
+		]
+	}
+};
 
 export default Editor;
