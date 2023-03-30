@@ -1,5 +1,6 @@
 import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview';
+import diaIcon from './dia.svg'
 
 const VISUAL_SELECTION_MARKER_NAME = 'link-ui';
 
@@ -7,11 +8,22 @@ class Dia extends Plugin {
 	init () {
 		const editor = this.editor
 
+		const config = editor.config.get('dia')
+
+		const activateFn = config.activate || null
+		
+		if (activateFn === null) {
+			console.warn('dia config need field `activate`')
+		}
+
 		editor.ui.componentFactory.add('dia', () => {
 			const button = new ButtonView()
 			button.set({
 				label: 'DIA',
-				withText: true
+				withText: false,
+				icon: diaIcon,
+				class: 'dia-icon',
+				tooltip: 'Get AI Insight'
 			})
 			button.on('execute', () => {
 				const fn = (text) => {
@@ -19,7 +31,7 @@ class Dia extends Plugin {
 						editor.model.change( writer => {
 							const viewFrag = editor.data.processor.toView(text)
 							const modelFrag = editor.data.toModel(viewFrag)
-							editor.model.insertContent(modelFrag);
+							editor.model.insertContent(modelFrag)
 						})
 					}
 
@@ -33,7 +45,7 @@ class Dia extends Plugin {
           content += item.data
         }
 
-				editor.config._config.onDia(content, fn)
+				editor.config._config.dia.activate(content, fn)
         this.showFakeVisualSelection()
 				// editor.model.
 			})

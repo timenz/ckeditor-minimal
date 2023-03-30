@@ -49,13 +49,15 @@
 					
 					licenseKey: '',
 					toolbar: ["bold", "dia", "link"],
-					onDia (data, cb) {
-						console.log('data', data)
-						setTimeout(() => {
+					dia: {
+						activate (data, cb) {
+							console.log('data', data)
+							setTimeout(() => {
 
-							cb('semua<br>akan<br>Ada apa')
-						}, 1000)
-					}
+								cb('semua<br>akan<br>Ada apa')
+							}, 1000)
+						}
+					},
 				} )
 				.then( editor => {
 					window.editor = editor;
