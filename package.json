@@ -10,7 +10,7 @@
     "@ckeditor/ckeditor5-autosave": "^36.0.1",
     "@ckeditor/ckeditor5-basic-styles": "^36.0.1",
     "@ckeditor/ckeditor5-block-quote": "^36.0.1",
-    "@ckeditor/ckeditor5-dev-utils": "^32.1.2",
+    "@ckeditor/ckeditor5-dev-utils": "^58.0.0",
     "@ckeditor/ckeditor5-editor-balloon": "^36.0.1",
     "@ckeditor/ckeditor5-essentials": "^36.0.1",
     "@ckeditor/ckeditor5-heading": "^36.0.1",
@@ -26,7 +26,7 @@
     "postcss-loader": "^4.3.0",
     "raw-loader": "^4.0.2",
     "style-loader": "^2.0.0",
-    "terser-webpack-plugin": "^4.2.3",
+    "terser-webpack-plugin": "^5.6.1",
     "webpack": "^5.75.0",
     "webpack-cli": "^4.10.0"
   },
