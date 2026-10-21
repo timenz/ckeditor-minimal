@@ -10,7 +10,7 @@
     "@ckeditor/ckeditor5-autosave": "^36.0.1",
     "@ckeditor/ckeditor5-basic-styles": "^36.0.1",
     "@ckeditor/ckeditor5-block-quote": "^36.0.1",
-    "@ckeditor/ckeditor5-dev-utils": "^32.1.2",
+    "@ckeditor/ckeditor5-dev-utils": "^62.5.0",
     "@ckeditor/ckeditor5-editor-balloon": "^36.0.1",
     "@ckeditor/ckeditor5-essentials": "^36.0.1",
     "@ckeditor/ckeditor5-heading": "^36.0.1",
